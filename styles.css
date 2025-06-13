@@ -113,9 +113,23 @@ nav {
     padding: 1rem 5%;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    height: 90px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .logo span {
@@ -693,6 +707,18 @@ footer {
     
     .section-header h2 {
         font-size: 2rem;
+    }
+    
+    .logo {
+        gap: 10px;
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
     }
 }
 
