@@ -1,0 +1,17 @@
+{
+  "name": "neatwiseltd",
+  "version": "1.0.0",
+  "description": "Neatwise Ltd website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -p 3000",
+    "serve": "npx serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+} 
