@@ -121,9 +121,9 @@ nav {
 
 .logo-image {
     height: 90px;
-    width: auto;
-    border-radius: 8px;
-    object-fit: contain;
+    width: 90px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .logo h1 {
