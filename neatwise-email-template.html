@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #4DB6AC, #0097A7);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .header-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .inquiry-title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4DB6AC;
+            padding-bottom: 10px;
+        }
+        .customer-details {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4DB6AC;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .detail-row {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .detail-label {
+            font-weight: bold;
+            color: #333;
+            min-width: 120px;
+            display: inline-block;
+        }
+        .detail-value {
+            color: #555;
+            flex: 1;
+        }
+        .message-section {
+            margin: 25px 0;
+        }
+        .message-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .message-content {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            font-style: italic;
+            color: #555;
+        }
+        .action-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+        }
+        .reply-button {
+            display: inline-block;
+            background-color: #4DB6AC;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-links {
+            margin: 10px 0;
+        }
+        .footer-links a {
+            color: #4DB6AC;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .service-badge {
+            display: inline-block;
+            background-color: #4DB6AC;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .urgent-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-text">Neat<span style="color: #B2DFDB;">Wise</span></div>
+            <div class="header-subtitle">Professional Cleaning Services</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h2 class="inquiry-title">🏠 New Customer Inquiry</h2>
+            
+            <div class="urgent-notice">
+                <strong>⏰ New inquiry received!</strong> Please respond within 24 hours for best customer experience.
+            </div>
+
+            <!-- Customer Details -->
+            <div class="customer-details">
+                <div class="detail-row">
+                    <span class="detail-label">👤 Customer Name:</span>
+                    <span class="detail-value">{{from_name}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">📧 Email Address:</span>
+                    <span class="detail-value">{{from_email}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">📱 Phone Number:</span>
+                    <span class="detail-value">{{phone}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">🧹 Service Requested:</span>
+                    <span class="detail-value service-badge">{{service}}</span>
+                </div>
+            </div>
+
+            <!-- Customer Message -->
+            <div class="message-section">
+                <div class="message-title">💬 Customer Message:</div>
+                <div class="message-content">
+                    {{message}}
+                </div>
+            </div>
+
+            <!-- Action Section -->
+            <div class="action-section">
+                <p><strong>Ready to respond?</strong></p>
+                <a href="mailto:{{from_email}}?subject=Re: Your NeatWise Cleaning Inquiry&body=Hi {{from_name}},%0D%0A%0D%0AThank you for your interest in NeatWise cleaning services..." class="reply-button">
+                    📧 Reply to Customer
+                </a>
+                <p style="font-size: 14px; color: #666; margin-top: 15px;">
+                    Or call them directly at: <strong>{{phone}}</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div><strong>NeatWise Cleaning Services</strong></div>
+            <div class="footer-links">
+                <a href="https://www.neatwiseltd.co.uk">🌐 Website</a> |
+                <a href="tel:+441234567890">📞 Call Us</a> |
+                <a href="mailto:info@neatwiseltd.co.uk">✉️ Email Us</a>
+            </div>
+            <div style="margin-top: 15px; font-size: 12px; color: #999;">
+                This inquiry was submitted through your NeatWise website contact form.<br>
+                Making Your Space Spotless - One Clean at a Time! ✨
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
